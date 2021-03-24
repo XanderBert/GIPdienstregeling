@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GeselecteerdeDienstVerwijderenForm));
             this.textLabel = new System.Windows.Forms.Label();
             this.jaButton = new System.Windows.Forms.Button();
             this.neeButton = new System.Windows.Forms.Button();
@@ -71,8 +72,9 @@
             this.Controls.Add(this.neeButton);
             this.Controls.Add(this.jaButton);
             this.Controls.Add(this.textLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GeselecteerdeDienstVerwijderenForm";
-            this.Text = "GeselecteerdeDienstVerwijderenForm";
+            this.Text = "NMBS";
             this.ResumeLayout(false);
             this.PerformLayout();
 

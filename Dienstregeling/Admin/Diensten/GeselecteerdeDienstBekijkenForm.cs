@@ -39,10 +39,5 @@ namespace Dienstregeling
             if (weekdienstCheckBox.Checked) { value = "Ja"; } else { value = "Nee"; }
             return value;
         }
-
-        private void exitButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
     }
 }

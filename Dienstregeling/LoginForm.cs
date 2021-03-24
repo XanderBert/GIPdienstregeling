@@ -28,7 +28,14 @@ namespace Dienstregeling
             {
                 AanpassenDienstenForm aanpassen = new AanpassenDienstenForm(loginID);
                 this.Hide();
+                aanpassen.StartPosition = FormStartPosition.Manual;
+                aanpassen.Location = this.Location;
+                aanpassen.Size = this.Size;
                 aanpassen.ShowDialog();
+
+                gebruikersnaamTextBox.Text = "";
+                wachtwoordTextBox.Text = "";
+
                 this.Show();
             }
             else { MessageBox.Show("Geen heldige login."); }

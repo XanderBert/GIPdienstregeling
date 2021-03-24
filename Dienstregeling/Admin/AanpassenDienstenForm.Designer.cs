@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AanpassenDienstenForm));
             this.regelingListBox = new System.Windows.Forms.ListBox();
             this.geselecteerdeDieButton = new System.Windows.Forms.Button();
             this.selectedDiestVerwijderenButton = new System.Windows.Forms.Button();
@@ -56,65 +57,96 @@
             this.regelingListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.regelingListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.regelingListBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.regelingListBox.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.regelingListBox.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.regelingListBox.FormattingEnabled = true;
             this.regelingListBox.ItemHeight = 17;
-            this.regelingListBox.Location = new System.Drawing.Point(6, 33);
+            this.regelingListBox.Location = new System.Drawing.Point(4, 39);
+            this.regelingListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.regelingListBox.Name = "regelingListBox";
-            this.regelingListBox.Size = new System.Drawing.Size(733, 276);
+            this.regelingListBox.Size = new System.Drawing.Size(1013, 325);
             this.regelingListBox.TabIndex = 1;
             // 
             // geselecteerdeDieButton
             // 
             this.geselecteerdeDieButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.geselecteerdeDieButton.Location = new System.Drawing.Point(6, 325);
+            this.geselecteerdeDieButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.geselecteerdeDieButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.geselecteerdeDieButton.Image = global::Dienstregeling.Properties.Resources.ArrowIconWhite_Small;
+            this.geselecteerdeDieButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.geselecteerdeDieButton.Location = new System.Drawing.Point(3, 400);
+            this.geselecteerdeDieButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.geselecteerdeDieButton.Name = "geselecteerdeDieButton";
-            this.geselecteerdeDieButton.Size = new System.Drawing.Size(733, 23);
+            this.geselecteerdeDieButton.Size = new System.Drawing.Size(1014, 38);
             this.geselecteerdeDieButton.TabIndex = 2;
             this.geselecteerdeDieButton.Text = "Geselecteerde Dienst Aanpassen";
-            this.geselecteerdeDieButton.UseVisualStyleBackColor = true;
+            this.geselecteerdeDieButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.geselecteerdeDieButton.UseVisualStyleBackColor = false;
             this.geselecteerdeDieButton.Click += new System.EventHandler(this.geselecteerdeDieButton_Click);
             // 
             // selectedDiestVerwijderenButton
             // 
             this.selectedDiestVerwijderenButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.selectedDiestVerwijderenButton.Location = new System.Drawing.Point(6, 354);
+            this.selectedDiestVerwijderenButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.selectedDiestVerwijderenButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.selectedDiestVerwijderenButton.Image = global::Dienstregeling.Properties.Resources.ArrowIconWhite_Small;
+            this.selectedDiestVerwijderenButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.selectedDiestVerwijderenButton.Location = new System.Drawing.Point(3, 446);
+            this.selectedDiestVerwijderenButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.selectedDiestVerwijderenButton.Name = "selectedDiestVerwijderenButton";
-            this.selectedDiestVerwijderenButton.Size = new System.Drawing.Size(733, 23);
+            this.selectedDiestVerwijderenButton.Size = new System.Drawing.Size(1014, 38);
             this.selectedDiestVerwijderenButton.TabIndex = 3;
             this.selectedDiestVerwijderenButton.Text = "Geselecteerde Deinst Verwijderen";
-            this.selectedDiestVerwijderenButton.UseVisualStyleBackColor = true;
+            this.selectedDiestVerwijderenButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.selectedDiestVerwijderenButton.UseVisualStyleBackColor = false;
             this.selectedDiestVerwijderenButton.Click += new System.EventHandler(this.selectedDiestVerwijderenButton_Click);
             // 
             // dienstToevoegenButton
             // 
             this.dienstToevoegenButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dienstToevoegenButton.Location = new System.Drawing.Point(6, 383);
+            this.dienstToevoegenButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.dienstToevoegenButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dienstToevoegenButton.Image = global::Dienstregeling.Properties.Resources.ArrowIconWhite_Small;
+            this.dienstToevoegenButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.dienstToevoegenButton.Location = new System.Drawing.Point(3, 492);
+            this.dienstToevoegenButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dienstToevoegenButton.Name = "dienstToevoegenButton";
-            this.dienstToevoegenButton.Size = new System.Drawing.Size(733, 23);
+            this.dienstToevoegenButton.Size = new System.Drawing.Size(1014, 38);
             this.dienstToevoegenButton.TabIndex = 4;
             this.dienstToevoegenButton.Text = "Dienst Toevoegen";
-            this.dienstToevoegenButton.UseVisualStyleBackColor = true;
+            this.dienstToevoegenButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dienstToevoegenButton.UseVisualStyleBackColor = false;
             this.dienstToevoegenButton.Click += new System.EventHandler(this.dienstToevoegenButton_Click);
             // 
             // terugButton
             // 
-            this.terugButton.AccessibleRole = System.Windows.Forms.AccessibleRole.Client;
-            this.terugButton.Location = new System.Drawing.Point(12, 61);
+            this.terugButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.terugButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.terugButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.terugButton.Image = global::Dienstregeling.Properties.Resources.ArrowIconWhite_Small;
+            this.terugButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.terugButton.Location = new System.Drawing.Point(7, 640);
+            this.terugButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.terugButton.Name = "terugButton";
-            this.terugButton.Size = new System.Drawing.Size(116, 23);
+            this.terugButton.Size = new System.Drawing.Size(1017, 38);
             this.terugButton.TabIndex = 5;
             this.terugButton.Text = "Uitloggen";
-            this.terugButton.UseVisualStyleBackColor = true;
+            this.terugButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.terugButton.UseVisualStyleBackColor = false;
             this.terugButton.Click += new System.EventHandler(this.terugButton_Click);
             // 
             // sorteerGemeenteComboBox
             // 
             this.sorteerGemeenteComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.sorteerGemeenteComboBox.FormattingEnabled = true;
+            this.sorteerGemeenteComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.sorteerGemeenteComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.sorteerGemeenteComboBox.ForeColor = System.Drawing.SystemColors.Window;
             this.sorteerGemeenteComboBox.Items.AddRange(new object[] {
             "Poperinge",
             "TEST",
@@ -123,20 +155,21 @@
             "Wevelgem",
             "Bissegem",
             "Kortrijk"});
-            this.sorteerGemeenteComboBox.Location = new System.Drawing.Point(618, 6);
+            this.sorteerGemeenteComboBox.Location = new System.Drawing.Point(857, 4);
+            this.sorteerGemeenteComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sorteerGemeenteComboBox.Name = "sorteerGemeenteComboBox";
-            this.sorteerGemeenteComboBox.Size = new System.Drawing.Size(121, 21);
+            this.sorteerGemeenteComboBox.Size = new System.Drawing.Size(160, 25);
             this.sorteerGemeenteComboBox.TabIndex = 6;
-            this.sorteerGemeenteComboBox.Text = "Poperinge";
             this.sorteerGemeenteComboBox.SelectedIndexChanged += new System.EventHandler(this.sorteerGemeenteComboBox_SelectedIndexChanged);
             // 
             // weekdienstCheckBox
             // 
             this.weekdienstCheckBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.weekdienstCheckBox.AutoSize = true;
-            this.weekdienstCheckBox.Location = new System.Drawing.Point(512, 8);
+            this.weekdienstCheckBox.Location = new System.Drawing.Point(728, 6);
+            this.weekdienstCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.weekdienstCheckBox.Name = "weekdienstCheckBox";
-            this.weekdienstCheckBox.Size = new System.Drawing.Size(83, 17);
+            this.weekdienstCheckBox.Size = new System.Drawing.Size(99, 21);
             this.weekdienstCheckBox.TabIndex = 7;
             this.weekdienstCheckBox.Text = "Weekdienst";
             this.weekdienstCheckBox.UseVisualStyleBackColor = true;
@@ -149,76 +182,96 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dienstEnGebruikTabControl.Controls.Add(this.dienstenTabPage);
             this.dienstEnGebruikTabControl.Controls.Add(this.gebruikersTabPage);
-            this.dienstEnGebruikTabControl.Location = new System.Drawing.Point(12, 90);
+            this.dienstEnGebruikTabControl.Location = new System.Drawing.Point(0, 29);
+            this.dienstEnGebruikTabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dienstEnGebruikTabControl.Name = "dienstEnGebruikTabControl";
             this.dienstEnGebruikTabControl.SelectedIndex = 0;
-            this.dienstEnGebruikTabControl.Size = new System.Drawing.Size(753, 437);
+            this.dienstEnGebruikTabControl.Size = new System.Drawing.Size(1033, 578);
             this.dienstEnGebruikTabControl.TabIndex = 8;
             // 
             // dienstenTabPage
             // 
+            this.dienstenTabPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
             this.dienstenTabPage.Controls.Add(this.regelingListBox);
             this.dienstenTabPage.Controls.Add(this.weekdienstCheckBox);
             this.dienstenTabPage.Controls.Add(this.geselecteerdeDieButton);
             this.dienstenTabPage.Controls.Add(this.sorteerGemeenteComboBox);
             this.dienstenTabPage.Controls.Add(this.selectedDiestVerwijderenButton);
             this.dienstenTabPage.Controls.Add(this.dienstToevoegenButton);
-            this.dienstenTabPage.Location = new System.Drawing.Point(4, 22);
+            this.dienstenTabPage.Location = new System.Drawing.Point(4, 26);
+            this.dienstenTabPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dienstenTabPage.Name = "dienstenTabPage";
-            this.dienstenTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.dienstenTabPage.Size = new System.Drawing.Size(745, 411);
+            this.dienstenTabPage.Size = new System.Drawing.Size(1025, 548);
             this.dienstenTabPage.TabIndex = 0;
             this.dienstenTabPage.Text = "Diensten";
-            this.dienstenTabPage.UseVisualStyleBackColor = true;
             // 
             // gebruikersTabPage
             // 
+            this.gebruikersTabPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
             this.gebruikersTabPage.Controls.Add(this.gebruikerToevoegenButton);
             this.gebruikersTabPage.Controls.Add(this.gebruikerVerwijderenButton);
             this.gebruikersTabPage.Controls.Add(this.gebruikerAanpassenButton);
             this.gebruikersTabPage.Controls.Add(this.gebruikersListBox);
-            this.gebruikersTabPage.Location = new System.Drawing.Point(4, 22);
+            this.gebruikersTabPage.Location = new System.Drawing.Point(4, 26);
+            this.gebruikersTabPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gebruikersTabPage.Name = "gebruikersTabPage";
-            this.gebruikersTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.gebruikersTabPage.Size = new System.Drawing.Size(745, 376);
+            this.gebruikersTabPage.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gebruikersTabPage.Size = new System.Drawing.Size(1025, 539);
             this.gebruikersTabPage.TabIndex = 1;
             this.gebruikersTabPage.Text = "Gebruikers";
-            this.gebruikersTabPage.UseVisualStyleBackColor = true;
             // 
             // gebruikerToevoegenButton
             // 
             this.gebruikerToevoegenButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gebruikerToevoegenButton.Location = new System.Drawing.Point(6, 289);
+            this.gebruikerToevoegenButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.gebruikerToevoegenButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gebruikerToevoegenButton.Image = global::Dienstregeling.Properties.Resources.ArrowIconWhite_Small;
+            this.gebruikerToevoegenButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.gebruikerToevoegenButton.Location = new System.Drawing.Point(8, 400);
+            this.gebruikerToevoegenButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gebruikerToevoegenButton.Name = "gebruikerToevoegenButton";
-            this.gebruikerToevoegenButton.Size = new System.Drawing.Size(733, 23);
+            this.gebruikerToevoegenButton.Size = new System.Drawing.Size(1006, 38);
             this.gebruikerToevoegenButton.TabIndex = 7;
             this.gebruikerToevoegenButton.Text = "Gebruiker Toevoegen";
-            this.gebruikerToevoegenButton.UseVisualStyleBackColor = true;
+            this.gebruikerToevoegenButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.gebruikerToevoegenButton.UseVisualStyleBackColor = false;
             this.gebruikerToevoegenButton.Click += new System.EventHandler(this.gebruikerToevoegenButton_Click);
             // 
             // gebruikerVerwijderenButton
             // 
             this.gebruikerVerwijderenButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gebruikerVerwijderenButton.Location = new System.Drawing.Point(6, 347);
+            this.gebruikerVerwijderenButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.gebruikerVerwijderenButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gebruikerVerwijderenButton.Image = global::Dienstregeling.Properties.Resources.ArrowIconWhite_Small;
+            this.gebruikerVerwijderenButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.gebruikerVerwijderenButton.Location = new System.Drawing.Point(8, 492);
+            this.gebruikerVerwijderenButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gebruikerVerwijderenButton.Name = "gebruikerVerwijderenButton";
-            this.gebruikerVerwijderenButton.Size = new System.Drawing.Size(733, 23);
+            this.gebruikerVerwijderenButton.Size = new System.Drawing.Size(1006, 38);
             this.gebruikerVerwijderenButton.TabIndex = 6;
             this.gebruikerVerwijderenButton.Text = "Geselecteerde Gebruiker Verwijderen";
-            this.gebruikerVerwijderenButton.UseVisualStyleBackColor = true;
+            this.gebruikerVerwijderenButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.gebruikerVerwijderenButton.UseVisualStyleBackColor = false;
             this.gebruikerVerwijderenButton.Click += new System.EventHandler(this.gebruikerVerwijderenButton_Click);
             // 
             // gebruikerAanpassenButton
             // 
             this.gebruikerAanpassenButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gebruikerAanpassenButton.Location = new System.Drawing.Point(6, 318);
+            this.gebruikerAanpassenButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.gebruikerAanpassenButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gebruikerAanpassenButton.Image = global::Dienstregeling.Properties.Resources.ArrowIconWhite_Small;
+            this.gebruikerAanpassenButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.gebruikerAanpassenButton.Location = new System.Drawing.Point(8, 446);
+            this.gebruikerAanpassenButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gebruikerAanpassenButton.Name = "gebruikerAanpassenButton";
-            this.gebruikerAanpassenButton.Size = new System.Drawing.Size(733, 23);
+            this.gebruikerAanpassenButton.Size = new System.Drawing.Size(1006, 38);
             this.gebruikerAanpassenButton.TabIndex = 5;
             this.gebruikerAanpassenButton.Text = "Geslecteerd Gebruiker Aanpassen";
-            this.gebruikerAanpassenButton.UseVisualStyleBackColor = true;
+            this.gebruikerAanpassenButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.gebruikerAanpassenButton.UseVisualStyleBackColor = false;
             this.gebruikerAanpassenButton.Click += new System.EventHandler(this.gebruikerAanpassenButton_Click);
             // 
             // gebruikersListBox
@@ -226,10 +279,15 @@
             this.gebruikersListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gebruikersListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.gebruikersListBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.gebruikersListBox.ForeColor = System.Drawing.SystemColors.Window;
             this.gebruikersListBox.FormattingEnabled = true;
-            this.gebruikersListBox.Location = new System.Drawing.Point(6, 6);
+            this.gebruikersListBox.ItemHeight = 17;
+            this.gebruikersListBox.Location = new System.Drawing.Point(4, 8);
+            this.gebruikersListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gebruikersListBox.Name = "gebruikersListBox";
-            this.gebruikersListBox.Size = new System.Drawing.Size(733, 277);
+            this.gebruikersListBox.Size = new System.Drawing.Size(1010, 376);
             this.gebruikersListBox.TabIndex = 4;
             // 
             // menuStrip1
@@ -238,7 +296,8 @@
             this.bestandToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(775, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 3, 0, 3);
+            this.menuStrip1.Size = new System.Drawing.Size(1033, 25);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -247,7 +306,7 @@
             this.bestandToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exporterenAlsCSVToolStripMenuItem});
             this.bestandToolStripMenuItem.Name = "bestandToolStripMenuItem";
-            this.bestandToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.bestandToolStripMenuItem.Size = new System.Drawing.Size(61, 19);
             this.bestandToolStripMenuItem.Text = "Bestand";
             // 
             // exporterenAlsCSVToolStripMenuItem
@@ -259,16 +318,21 @@
             // 
             // AanpassenDienstenForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(775, 538);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.ClientSize = new System.Drawing.Size(1033, 691);
             this.Controls.Add(this.dienstEnGebruikTabControl);
             this.Controls.Add(this.terugButton);
             this.Controls.Add(this.menuStrip1);
+            this.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.MinimumSize = new System.Drawing.Size(791, 493);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinimumSize = new System.Drawing.Size(1049, 633);
             this.Name = "AanpassenDienstenForm";
-            this.Text = "AanpassenDiensten";
+            this.Text = "NMBS";
             this.dienstEnGebruikTabControl.ResumeLayout(false);
             this.dienstenTabPage.ResumeLayout(false);
             this.dienstenTabPage.PerformLayout();
@@ -286,7 +350,6 @@
         private System.Windows.Forms.Button selectedDiestVerwijderenButton;
         private System.Windows.Forms.Button dienstToevoegenButton;
         private System.Windows.Forms.Button terugButton;
-        private System.Windows.Forms.ComboBox sorteerGemeenteComboBox;
         private System.Windows.Forms.CheckBox weekdienstCheckBox;
         private System.Windows.Forms.TabControl dienstEnGebruikTabControl;
         private System.Windows.Forms.TabPage dienstenTabPage;
@@ -298,5 +361,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem bestandToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exporterenAlsCSVToolStripMenuItem;
+        private System.Windows.Forms.ComboBox sorteerGemeenteComboBox;
     }
 }

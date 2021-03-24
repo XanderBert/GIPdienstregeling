@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GeselecteerdeDienstWijzigenForm));
             this.label1 = new System.Windows.Forms.Label();
             this.naamTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -186,8 +187,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.naamTextBox);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GeselecteerdeDienstWijzigenForm";
-            this.Text = "Dienst";
+            this.Text = "NMBS";
             ((System.ComponentModel.ISupportInitialize)(this.verNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

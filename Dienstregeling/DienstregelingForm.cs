@@ -31,6 +31,18 @@ namespace Dienstregeling
             _bestemming = bestemming;
             _treins = _dienstregelingDA.Soorteer(_uur.ToString(),_weekdienst,_bestemming);
             ListBoxVernieuwen();
+            this.regelingListBox.MouseDoubleClick += new MouseEventHandler(regelingListBox_MouseDoubleclick);
+        }
+
+        private void regelingListBox_MouseDoubleclick(object sender, MouseEventArgs e)
+        {
+            int index = this.regelingListBox.IndexFromPoint(e.Location);
+
+            if (index != ListBox.NoMatches)
+            {
+                Trein trein = (Trein)regelingListBox.SelectedItem;
+                ToonTrein(trein);
+            }
         }
 
         private void ListBoxVernieuwen()
@@ -42,14 +54,23 @@ namespace Dienstregeling
         private void toonDienstForm_Click(object sender, EventArgs e)
         {
             Trein trein = (Trein)regelingListBox.SelectedItem;
+            ToonTrein(trein);
+        }
+
+        private void ToonTrein(Trein trein)
+        {
             if (trein != null)
             {
                 GeselecteerdeDienstBekijkenForm geselecteerdeDienstBekijkenForm = new GeselecteerdeDienstBekijkenForm(trein);
                 this.Hide();
+
+                geselecteerdeDienstBekijkenForm.StartPosition = FormStartPosition.Manual;
+                geselecteerdeDienstBekijkenForm.Location = this.Location;
+                geselecteerdeDienstBekijkenForm.Size = this.Size;
                 geselecteerdeDienstBekijkenForm.ShowDialog();
+
                 this.Show();
             }
-            
         }
 
         private void sluitButton_Click(object sender, EventArgs e)

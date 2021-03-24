@@ -15,41 +15,17 @@ namespace Dienstregeling
     public partial class GeselecteerdeGebruikerWijzigenForm : Form
     {
         private Gebruiker _gebruiker;
-        private bool _isNieuw;
-        private bool _isEigen;
         LoginDA _loginDA;
         ErrorProvider _error;
 
-        public GeselecteerdeGebruikerWijzigenForm(Gebruiker gebruiker, bool isNieuw, bool eigenAccount)
+        public GeselecteerdeGebruikerWijzigenForm(Gebruiker gebruiker)
         {
             _gebruiker = gebruiker;
-            _isNieuw = isNieuw;
-            _isEigen = eigenAccount;
+
             _loginDA = new LoginDA();
             InitializeComponent();
             gebruikersnaamTextBox.Text = _gebruiker.Gebruikersnaam;
-            IsNieuwOfEigenAccount();
             _error = new ErrorProvider();
-        }
-
-        // kijken of je een nieuwe gebruiker aanmaakt en zo de vakken die zichtbaar zijn aanpassen
-        private void IsNieuwOfEigenAccount()
-        {
-            if (!_isNieuw)
-            {
-                wachtwooordLabel.Visible = false;
-                repeatWachtwoordLabel.Visible = false;
-                wachtwoordTextBox.Visible = false;
-                repeatWachtwoordTextBox.Visible = false;
-            }
-
-            if (_isEigen)
-            {
-                wachtwooordLabel.Visible = true;
-                repeatWachtwoordLabel.Visible = true;
-                wachtwoordTextBox.Visible = true;
-                repeatWachtwoordTextBox.Visible = true;
-            }
         }
 
         private bool IsWachtwoordGelijk()
@@ -72,22 +48,19 @@ namespace Dienstregeling
         private void opslaanButton_Click(object sender, EventArgs e)
         {
             
-            if (_isNieuw || _isEigen)
-            {
+
                 if (ValidateChildren())
                 {
                     _gebruiker.Gebruikersnaam = gebruikersnaamTextBox.Text;
                     _gebruiker.Wachtwoord = wachtwoordTextBox.Text;
                     this.Close();
                 }
-            }
-            else
-            {
+          
                 CancelEventArgs nieuw = new CancelEventArgs();
                 gebruikersnaamTextBox_Validating(sender, nieuw);
                 _gebruiker.Gebruikersnaam = gebruikersnaamTextBox.Text;
                 this.Close();
-            }
+            
 
         }
 

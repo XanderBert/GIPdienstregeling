@@ -129,11 +129,17 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AanpassenDienstenForm.cs">
+    <Compile Include="Admin\AanpassenDienstenForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AanpassenDienstenForm.Designer.cs">
+    <Compile Include="Admin\AanpassenDienstenForm.Designer.cs">
       <DependentUpon>AanpassenDienstenForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Gebruikers\EigenOfNieuweGebruikerAanpassenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Gebruikers\EigenOfNieuweGebruikerAanpassenForm.Designer.cs">
+      <DependentUpon>EigenOfNieuweGebruikerAanpassenForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DienstregelingForm.cs">
       <SubType>Form</SubType>
@@ -141,28 +147,28 @@
     <Compile Include="DienstregelingForm.Designer.cs">
       <DependentUpon>DienstregelingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GeselecteerdeDienstBekijkenForm.cs">
+    <Compile Include="Admin\Diensten\GeselecteerdeDienstBekijkenForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GeselecteerdeDienstBekijkenForm.Designer.cs">
+    <Compile Include="Admin\Diensten\GeselecteerdeDienstBekijkenForm.Designer.cs">
       <DependentUpon>GeselecteerdeDienstBekijkenForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GeselecteerdeDienstVerwijderenForm.cs">
+    <Compile Include="Admin\Diensten\GeselecteerdeDienstVerwijderenForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GeselecteerdeDienstVerwijderenForm.Designer.cs">
+    <Compile Include="Admin\Diensten\GeselecteerdeDienstVerwijderenForm.Designer.cs">
       <DependentUpon>GeselecteerdeDienstVerwijderenForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GeselecteerdeDienstWijzigenForm.cs">
+    <Compile Include="Admin\Diensten\GeselecteerdeDienstWijzigenForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GeselecteerdeDienstWijzigenForm.Designer.cs">
+    <Compile Include="Admin\Diensten\GeselecteerdeDienstWijzigenForm.Designer.cs">
       <DependentUpon>GeselecteerdeDienstWijzigenForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GeselecteerdeGebruikerWijzigenForm.cs">
+    <Compile Include="Admin\Gebruikers\GeselecteerdeGebruikerWijzigenForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GeselecteerdeGebruikerWijzigenForm.Designer.cs">
+    <Compile Include="Admin\Gebruikers\GeselecteerdeGebruikerWijzigenForm.Designer.cs">
       <DependentUpon>GeselecteerdeGebruikerWijzigenForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
@@ -179,22 +185,25 @@
     <Compile Include="StartupForm.Designer.cs">
       <DependentUpon>StartupForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AanpassenDienstenForm.resx">
+    <EmbeddedResource Include="Admin\AanpassenDienstenForm.resx">
       <DependentUpon>AanpassenDienstenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Gebruikers\EigenOfNieuweGebruikerAanpassenForm.resx">
+      <DependentUpon>EigenOfNieuweGebruikerAanpassenForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DienstregelingForm.resx">
       <DependentUpon>DienstregelingForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GeselecteerdeDienstBekijkenForm.resx">
+    <EmbeddedResource Include="Admin\Diensten\GeselecteerdeDienstBekijkenForm.resx">
       <DependentUpon>GeselecteerdeDienstBekijkenForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GeselecteerdeDienstVerwijderenForm.resx">
+    <EmbeddedResource Include="Admin\Diensten\GeselecteerdeDienstVerwijderenForm.resx">
       <DependentUpon>GeselecteerdeDienstVerwijderenForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GeselecteerdeDienstWijzigenForm.resx">
+    <EmbeddedResource Include="Admin\Diensten\GeselecteerdeDienstWijzigenForm.resx">
       <DependentUpon>GeselecteerdeDienstWijzigenForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GeselecteerdeGebruikerWijzigenForm.resx">
+    <EmbeddedResource Include="Admin\Gebruikers\GeselecteerdeGebruikerWijzigenForm.resx">
       <DependentUpon>GeselecteerdeGebruikerWijzigenForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
@@ -210,6 +219,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="StartupForm.aa.resx">
+      <DependentUpon>StartupForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StartupForm.resx">
       <DependentUpon>StartupForm.cs</DependentUpon>
     </EmbeddedResource>

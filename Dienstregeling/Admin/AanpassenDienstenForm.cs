@@ -74,7 +74,8 @@ namespace Dienstregeling
             _treins = _dienstregelingDA.Soorteer("0", weekdienst, naam);
             ListBoxVernieuwen();
         }
-            // oproepen van combobox status changed om ook te sorteeren wanneer te checkbox veranderd
+
+        // oproepen van combobox status changed om ook te sorteeren wanneer te checkbox veranderd
         private void weekdienstCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             sorteerGemeenteComboBox_SelectedIndexChanged(sender, e);
@@ -84,9 +85,9 @@ namespace Dienstregeling
         {
             sorteerGemeenteComboBox.Items.Clear();
             foreach (String bestemming in _bestemmingen) { sorteerGemeenteComboBox.Items.Add(bestemming); }
+            sorteerGemeenteComboBox.Text = _bestemmingen[0];
         }
 
-        //verniewen van listbox
         private void ListBoxVernieuwen()
         {
             regelingListBox.DataSource = null;
@@ -100,38 +101,6 @@ namespace Dienstregeling
             this.Close();
         }
 
-
-        // Functies omtrend Gebruikers
-        private void gebruikerToevoegenButton_Click(object sender, EventArgs e)
-        {
-            Gebruiker nieuweGebruiker = new Gebruiker(0, "", "");
-            GeselecteerdeGebruikerWijzigenForm gebruikerWijzigenForm = new GeselecteerdeGebruikerWijzigenForm(nieuweGebruiker, true, false);
-            gebruikerWijzigenForm.ShowDialog();
-            _loginDA.CreateRecord(nieuweGebruiker);
-            _gebruikers = _loginDA.ReadTable();
-            ListBoxVernieuwen();
-        }
-
-        private void gebruikerAanpassenButton_Click(object sender, EventArgs e)
-        {
-            Gebruiker selected = (Gebruiker)gebruikersListBox.SelectedItem;
-            bool zelfdeGebruiker = false;
-            if (selected.ID == _loginID) { zelfdeGebruiker = true; }
-            GeselecteerdeGebruikerWijzigenForm gebruikerWijzigenForm = new GeselecteerdeGebruikerWijzigenForm(selected, false, zelfdeGebruiker);
-            gebruikerWijzigenForm.ShowDialog();
-            _loginDA.UpdateRecord(selected);
-            _gebruikers = _loginDA.ReadTable();
-            ListBoxVernieuwen();
-        }
-
-        private void gebruikerVerwijderenButton_Click(object sender, EventArgs e)
-        {
-            Gebruiker selected = (Gebruiker)gebruikersListBox.SelectedItem;
-            if (selected.ID == _loginID) { MessageBox.Show("Je kan jezelf niet verwijderen"); } else { _loginDA.DeleteRecord(selected.ID); }
-            _gebruikers = _loginDA.ReadTable();
-            ListBoxVernieuwen();
-        }
-
         private void exporterenAlsCSVToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog sfd = new SaveFileDialog();
@@ -142,6 +111,55 @@ namespace Dienstregeling
                 List<String> csv = _dienstregelingDA.ReturnCSV();
                 System.IO.File.WriteAllLines(sfd.FileName, csv);
             }
+        }
+
+        // Functies omtrend Gebruikers
+        private void gebruikerToevoegenButton_Click(object sender, EventArgs e)
+        {
+            Gebruiker nieuweGebruiker = new Gebruiker(0, "", "");
+            EigenOfNieuweGebruikerAanpassenForm nieuweGebruikerAanpassenForm = new EigenOfNieuweGebruikerAanpassenForm(nieuweGebruiker);
+            nieuweGebruikerAanpassenForm.ShowDialog();
+            _loginDA.CreateRecord(nieuweGebruiker);
+            _gebruikers = _loginDA.ReadTable();
+            ListBoxVernieuwen();
+        }
+
+        private void gebruikerAanpassenButton_Click(object sender, EventArgs e)
+        {
+            Gebruiker selected = (Gebruiker)gebruikersListBox.SelectedItem;
+
+            if (IsZelfdeGebruiker(selected.ID))
+            {
+                EigenOfNieuweGebruikerAanpassenForm aanpassenForm = new EigenOfNieuweGebruikerAanpassenForm(selected);
+                aanpassenForm.ShowDialog();
+            }
+            else
+            {
+                GeselecteerdeGebruikerWijzigenForm aanpassenForm = new GeselecteerdeGebruikerWijzigenForm(selected);
+                aanpassenForm.ShowDialog();
+            }
+            
+            _loginDA.UpdateRecord(selected);
+            _gebruikers = _loginDA.ReadTable();
+            ListBoxVernieuwen();
+        }
+
+        private void gebruikerVerwijderenButton_Click(object sender, EventArgs e)
+        {
+            Gebruiker selected = (Gebruiker)gebruikersListBox.SelectedItem;
+            if (IsZelfdeGebruiker(selected.ID)) { MessageBox.Show("Je kan jezelf niet verwijderen"); } else { _loginDA.DeleteRecord(selected.ID); }
+            _gebruikers = _loginDA.ReadTable();
+            ListBoxVernieuwen();
+        }
+
+        private bool IsZelfdeGebruiker(int id)
+        {
+            bool zelfdeGebruiker = false;
+            if (id == _loginID)
+            {
+                zelfdeGebruiker = true;
+            }
+            return zelfdeGebruiker;
         }
     }
 }

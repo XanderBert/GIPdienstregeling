@@ -100,7 +100,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(788, 383);
             this.Name = "DienstregelingForm";
-            this.Text = "Dienstregeling";
+            this.Text = "NMBS";
             this.ResumeLayout(false);
 
         }
