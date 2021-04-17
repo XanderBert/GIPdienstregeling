@@ -36,41 +36,60 @@
             // 
             // gebruikersnaamTextBox
             // 
-            this.gebruikersnaamTextBox.Location = new System.Drawing.Point(184, 6);
+            this.gebruikersnaamTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gebruikersnaamTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.gebruikersnaamTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.gebruikersnaamTextBox.Location = new System.Drawing.Point(261, 10);
+            this.gebruikersnaamTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.gebruikersnaamTextBox.Name = "gebruikersnaamTextBox";
-            this.gebruikersnaamTextBox.Size = new System.Drawing.Size(201, 20);
+            this.gebruikersnaamTextBox.Size = new System.Drawing.Size(267, 25);
             this.gebruikersnaamTextBox.TabIndex = 0;
             this.gebruikersnaamTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.gebruikersnaamTextBox_Validating);
             this.gebruikersnaamTextBox.Validated += new System.EventHandler(this.gebruikersnaamTextBox_Validated);
             // 
             // opslaanButton
             // 
-            this.opslaanButton.Location = new System.Drawing.Point(15, 51);
+            this.opslaanButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.opslaanButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.opslaanButton.FlatAppearance.BorderSize = 0;
+            this.opslaanButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.opslaanButton.Image = global::Dienstregeling.Properties.Resources.ArrowIconWhite_Small;
+            this.opslaanButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.opslaanButton.Location = new System.Drawing.Point(1, 54);
+            this.opslaanButton.Margin = new System.Windows.Forms.Padding(4);
             this.opslaanButton.Name = "opslaanButton";
-            this.opslaanButton.Size = new System.Drawing.Size(370, 23);
+            this.opslaanButton.Size = new System.Drawing.Size(539, 30);
             this.opslaanButton.TabIndex = 3;
             this.opslaanButton.Text = "Opslaan";
-            this.opslaanButton.UseVisualStyleBackColor = true;
+            this.opslaanButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.opslaanButton.UseVisualStyleBackColor = false;
             this.opslaanButton.Click += new System.EventHandler(this.opslaanButton_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(6, 12);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 13);
+            this.label1.Size = new System.Drawing.Size(108, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "Gebruikersnaam";
             // 
             // GeselecteerdeGebruikerWijzigenForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(406, 103);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.ClientSize = new System.Drawing.Size(541, 89);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.opslaanButton);
             this.Controls.Add(this.gebruikersnaamTextBox);
+            this.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(557, 128);
             this.Name = "GeselecteerdeGebruikerWijzigenForm";
             this.Text = "NMBS";
             this.ResumeLayout(false);

@@ -36,15 +36,44 @@ namespace Dienstregeling
             _gebruikers = new List<Gebruiker>();
             _gebruikers = _loginDA.ReadTable();
 
+            this.regelingListBox.MouseDoubleClick += new MouseEventHandler(regelingListBox_MouseDoubleclick);
+            this.gebruikersListBox.MouseDoubleClick += new MouseEventHandler(gebruikerListBox_MouseDoubleclick);
             ListBoxVernieuwen();
         }
 
         // Functies omtrend Diensten
+
+        private void regelingListBox_MouseDoubleclick(object sender, MouseEventArgs e)
+        {
+            int index = this.regelingListBox.IndexFromPoint(e.Location);
+
+            if (index != ListBox.NoMatches)
+            {
+                Trein trein = (Trein)regelingListBox.SelectedItem;
+                ToonTrein(trein);
+            }
+        }
+
+        private void ToonTrein(Trein trein)
+        {
+            if (trein != null)
+            {
+                GeselecteerdeDienstWijzigenForm dienstWijzigen = new GeselecteerdeDienstWijzigenForm(trein, _bestemmingen);
+                this.Hide();
+
+                dienstWijzigen.StartPosition = FormStartPosition.Manual;
+                dienstWijzigen.Location = this.Location;
+                dienstWijzigen.Size = this.Size;
+                dienstWijzigen.ShowDialog();
+
+                this.Show();
+            }
+        }
+        
         private void geselecteerdeDieButton_Click(object sender, EventArgs e)
         {
             Trein selected = (Trein)regelingListBox.SelectedItem;
-            GeselecteerdeDienstWijzigenForm dienstWijzigen = new GeselecteerdeDienstWijzigenForm(selected, _bestemmingen);
-            dienstWijzigen.ShowDialog();
+            ToonTrein(selected);
             ListBoxVernieuwen();
             _dienstregelingDA.UpdateRecord(selected);
         }
@@ -53,7 +82,7 @@ namespace Dienstregeling
         {
             GeselecteerdeDienstVerwijderenForm verwijderenForm = new GeselecteerdeDienstVerwijderenForm((Trein)regelingListBox.SelectedItem);
             verwijderenForm.ShowDialog();
-            _treins = _dienstregelingDA.ReadTable();
+            _treins = _dienstregelingDA.Soorteer("0", weekdienstCheckBox.Checked, sorteerGemeenteComboBox.Text);
             ListBoxVernieuwen();
         }
 
@@ -63,7 +92,7 @@ namespace Dienstregeling
             GeselecteerdeDienstWijzigenForm nieuweDienst = new GeselecteerdeDienstWijzigenForm(nieuweTrein, _bestemmingen);
             nieuweDienst.ShowDialog();
             _dienstregelingDA.CreateRecord(nieuweTrein);
-            _treins = _dienstregelingDA.ReadTable();
+            _treins = _dienstregelingDA.Soorteer("0", weekdienstCheckBox.Checked, sorteerGemeenteComboBox.Text);
             ListBoxVernieuwen();
         }
 
@@ -114,11 +143,55 @@ namespace Dienstregeling
         }
 
         // Functies omtrend Gebruikers
+
+        
+        private void gebruikerListBox_MouseDoubleclick(object sender, MouseEventArgs e)
+        {
+            int index = this.gebruikersListBox.IndexFromPoint(e.Location);
+
+            if (index != ListBox.NoMatches)
+            {
+                Gebruiker gebruiker = (Gebruiker)gebruikersListBox.SelectedItem;
+                ToonGebruiker(gebruiker);
+            }
+        }
+
+        private void ToonGebruiker(Gebruiker gebruiker)
+        {
+            if (gebruiker != null)
+            {
+               // Gebruiker selected = (Gebruiker)gebruikersListBox.SelectedItem;
+                this.Hide();
+                if (IsZelfdeGebruiker(gebruiker.ID))
+                {
+                    EigenOfNieuweGebruikerAanpassenForm aanpassenForm = new EigenOfNieuweGebruikerAanpassenForm(gebruiker);
+                    aanpassenForm.StartPosition = FormStartPosition.Manual;
+                    aanpassenForm.Location = this.Location;
+                    aanpassenForm.Size = this.Size;
+                    aanpassenForm.ShowDialog();
+                }
+                else
+                {
+                    GeselecteerdeGebruikerWijzigenForm aanpassenForm = new GeselecteerdeGebruikerWijzigenForm(gebruiker);
+                    aanpassenForm.StartPosition = FormStartPosition.Manual;
+                    aanpassenForm.Location = this.Location;
+                    aanpassenForm.Size = this.Size;
+                    aanpassenForm.ShowDialog();
+                }
+                this.Show();
+            }
+        }
+
         private void gebruikerToevoegenButton_Click(object sender, EventArgs e)
         {
             Gebruiker nieuweGebruiker = new Gebruiker(0, "", "");
-            EigenOfNieuweGebruikerAanpassenForm nieuweGebruikerAanpassenForm = new EigenOfNieuweGebruikerAanpassenForm(nieuweGebruiker);
-            nieuweGebruikerAanpassenForm.ShowDialog();
+            EigenOfNieuweGebruikerAanpassenForm aanpassenForm = new EigenOfNieuweGebruikerAanpassenForm(nieuweGebruiker);
+            aanpassenForm.StartPosition = FormStartPosition.Manual;
+            aanpassenForm.Location = this.Location;
+            aanpassenForm.Size = this.Size;
+            this.Hide();
+            aanpassenForm.ShowDialog();
+            this.Show();
             _loginDA.CreateRecord(nieuweGebruiker);
             _gebruikers = _loginDA.ReadTable();
             ListBoxVernieuwen();
@@ -127,18 +200,8 @@ namespace Dienstregeling
         private void gebruikerAanpassenButton_Click(object sender, EventArgs e)
         {
             Gebruiker selected = (Gebruiker)gebruikersListBox.SelectedItem;
+            ToonGebruiker(selected);
 
-            if (IsZelfdeGebruiker(selected.ID))
-            {
-                EigenOfNieuweGebruikerAanpassenForm aanpassenForm = new EigenOfNieuweGebruikerAanpassenForm(selected);
-                aanpassenForm.ShowDialog();
-            }
-            else
-            {
-                GeselecteerdeGebruikerWijzigenForm aanpassenForm = new GeselecteerdeGebruikerWijzigenForm(selected);
-                aanpassenForm.ShowDialog();
-            }
-            
             _loginDA.UpdateRecord(selected);
             _gebruikers = _loginDA.ReadTable();
             ListBoxVernieuwen();

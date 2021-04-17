@@ -79,5 +79,10 @@ namespace Dienstregeling
             }
             else { MessageBox.Show("Een of meerdere voorwaarden zijn ongeldig!"); }
         }
+
+        private void vertrekDateTime_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

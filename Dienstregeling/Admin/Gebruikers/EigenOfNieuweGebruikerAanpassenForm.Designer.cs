@@ -40,9 +40,14 @@
             // 
             // repeatWachtwoordTextBox
             // 
-            this.repeatWachtwoordTextBox.Location = new System.Drawing.Point(199, 68);
+            this.repeatWachtwoordTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.repeatWachtwoordTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.repeatWachtwoordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.repeatWachtwoordTextBox.ForeColor = System.Drawing.SystemColors.Window;
+            this.repeatWachtwoordTextBox.Location = new System.Drawing.Point(311, 89);
+            this.repeatWachtwoordTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.repeatWachtwoordTextBox.Name = "repeatWachtwoordTextBox";
-            this.repeatWachtwoordTextBox.Size = new System.Drawing.Size(201, 20);
+            this.repeatWachtwoordTextBox.Size = new System.Drawing.Size(267, 25);
             this.repeatWachtwoordTextBox.TabIndex = 8;
             this.repeatWachtwoordTextBox.UseSystemPasswordChar = true;
             this.repeatWachtwoordTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.repeatWachtwoordTextBox_Validating);
@@ -50,9 +55,14 @@
             // 
             // wachtwoordTextBox
             // 
-            this.wachtwoordTextBox.Location = new System.Drawing.Point(199, 42);
+            this.wachtwoordTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.wachtwoordTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.wachtwoordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.wachtwoordTextBox.ForeColor = System.Drawing.SystemColors.Window;
+            this.wachtwoordTextBox.Location = new System.Drawing.Point(311, 55);
+            this.wachtwoordTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.wachtwoordTextBox.Name = "wachtwoordTextBox";
-            this.wachtwoordTextBox.Size = new System.Drawing.Size(201, 20);
+            this.wachtwoordTextBox.Size = new System.Drawing.Size(267, 25);
             this.wachtwoordTextBox.TabIndex = 7;
             this.wachtwoordTextBox.UseSystemPasswordChar = true;
             this.wachtwoordTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.wachtwoordTextBox_Validating);
@@ -61,54 +71,72 @@
             // repeatWachtwoordLabel
             // 
             this.repeatWachtwoordLabel.AutoSize = true;
-            this.repeatWachtwoordLabel.Location = new System.Drawing.Point(27, 76);
+            this.repeatWachtwoordLabel.Location = new System.Drawing.Point(12, 99);
+            this.repeatWachtwoordLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.repeatWachtwoordLabel.Name = "repeatWachtwoordLabel";
-            this.repeatWachtwoordLabel.Size = new System.Drawing.Size(105, 13);
+            this.repeatWachtwoordLabel.Size = new System.Drawing.Size(135, 17);
             this.repeatWachtwoordLabel.TabIndex = 12;
             this.repeatWachtwoordLabel.Text = "Herhaal wachtwoord";
             // 
             // wachtwooordLabel
             // 
             this.wachtwooordLabel.AutoSize = true;
-            this.wachtwooordLabel.Location = new System.Drawing.Point(27, 49);
+            this.wachtwooordLabel.Location = new System.Drawing.Point(12, 64);
+            this.wachtwooordLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.wachtwooordLabel.Name = "wachtwooordLabel";
-            this.wachtwooordLabel.Size = new System.Drawing.Size(68, 13);
+            this.wachtwooordLabel.Size = new System.Drawing.Size(86, 17);
             this.wachtwooordLabel.TabIndex = 11;
             this.wachtwooordLabel.Text = "Wachtwoord";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 19);
+            this.label1.Location = new System.Drawing.Point(12, 25);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 13);
+            this.label1.Size = new System.Drawing.Size(108, 17);
             this.label1.TabIndex = 9;
             this.label1.Text = "Gebruikersnaam";
             // 
             // opslaanButton
             // 
-            this.opslaanButton.Location = new System.Drawing.Point(30, 132);
+            this.opslaanButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.opslaanButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.opslaanButton.FlatAppearance.BorderSize = 0;
+            this.opslaanButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.opslaanButton.Image = global::Dienstregeling.Properties.Resources.ArrowIconWhite_Small;
+            this.opslaanButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.opslaanButton.Location = new System.Drawing.Point(2, 125);
+            this.opslaanButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.opslaanButton.Name = "opslaanButton";
-            this.opslaanButton.Size = new System.Drawing.Size(370, 23);
+            this.opslaanButton.Size = new System.Drawing.Size(581, 30);
             this.opslaanButton.TabIndex = 10;
             this.opslaanButton.Text = "Opslaan";
-            this.opslaanButton.UseVisualStyleBackColor = true;
+            this.opslaanButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.opslaanButton.UseVisualStyleBackColor = false;
             this.opslaanButton.Click += new System.EventHandler(this.opslaanButton_Click_1);
             // 
             // gebruikersnaamTextBox
             // 
-            this.gebruikersnaamTextBox.Location = new System.Drawing.Point(199, 16);
+            this.gebruikersnaamTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gebruikersnaamTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.gebruikersnaamTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.gebruikersnaamTextBox.ForeColor = System.Drawing.SystemColors.Window;
+            this.gebruikersnaamTextBox.Location = new System.Drawing.Point(311, 21);
+            this.gebruikersnaamTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gebruikersnaamTextBox.Name = "gebruikersnaamTextBox";
-            this.gebruikersnaamTextBox.Size = new System.Drawing.Size(201, 20);
+            this.gebruikersnaamTextBox.Size = new System.Drawing.Size(267, 25);
             this.gebruikersnaamTextBox.TabIndex = 6;
             this.gebruikersnaamTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.gebruikersnaamTextBox_Validating);
             this.gebruikersnaamTextBox.Validated += new System.EventHandler(this.gebruikersnaamTextBox_Validated);
             // 
             // EigenOfNieuweGebruikerAanpassenForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(439, 193);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.ClientSize = new System.Drawing.Size(585, 161);
             this.Controls.Add(this.repeatWachtwoordTextBox);
             this.Controls.Add(this.wachtwoordTextBox);
             this.Controls.Add(this.repeatWachtwoordLabel);
@@ -116,7 +144,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.opslaanButton);
             this.Controls.Add(this.gebruikersnaamTextBox);
+            this.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinimumSize = new System.Drawing.Size(601, 200);
             this.Name = "EigenOfNieuweGebruikerAanpassenForm";
             this.Text = "NMBS";
             this.ResumeLayout(false);

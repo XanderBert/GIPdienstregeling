@@ -38,17 +38,21 @@
             // 
             this.textLabel.AutoSize = true;
             this.textLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-            this.textLabel.Location = new System.Drawing.Point(12, 23);
+            this.textLabel.Location = new System.Drawing.Point(149, 9);
+            this.textLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.textLabel.Name = "textLabel";
             this.textLabel.Size = new System.Drawing.Size(442, 24);
             this.textLabel.TabIndex = 0;
             this.textLabel.Text = "Weet je zeker dat je dienst x wilt verwijderen ?";
+            this.textLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // jaButton
             // 
-            this.jaButton.Location = new System.Drawing.Point(16, 62);
+            this.jaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.jaButton.Location = new System.Drawing.Point(13, 52);
+            this.jaButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.jaButton.Name = "jaButton";
-            this.jaButton.Size = new System.Drawing.Size(207, 23);
+            this.jaButton.Size = new System.Drawing.Size(172, 30);
             this.jaButton.TabIndex = 1;
             this.jaButton.Text = "Ja";
             this.jaButton.UseVisualStyleBackColor = true;
@@ -56,9 +60,11 @@
             // 
             // neeButton
             // 
-            this.neeButton.Location = new System.Drawing.Point(229, 62);
+            this.neeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.neeButton.Location = new System.Drawing.Point(545, 52);
+            this.neeButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.neeButton.Name = "neeButton";
-            this.neeButton.Size = new System.Drawing.Size(225, 23);
+            this.neeButton.Size = new System.Drawing.Size(196, 30);
             this.neeButton.TabIndex = 2;
             this.neeButton.Text = "Nee";
             this.neeButton.UseVisualStyleBackColor = true;
@@ -66,13 +72,18 @@
             // 
             // GeselecteerdeDienstVerwijderenForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(490, 112);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.ClientSize = new System.Drawing.Size(754, 118);
             this.Controls.Add(this.neeButton);
             this.Controls.Add(this.jaButton);
             this.Controls.Add(this.textLabel);
+            this.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.SystemColors.Control;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinimumSize = new System.Drawing.Size(770, 157);
             this.Name = "GeselecteerdeDienstVerwijderenForm";
             this.Text = "NMBS";
             this.ResumeLayout(false);
