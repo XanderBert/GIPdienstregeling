@@ -148,7 +148,6 @@
             this.vertrekDateTime.ShowUpDown = true;
             this.vertrekDateTime.Size = new System.Drawing.Size(77, 25);
             this.vertrekDateTime.TabIndex = 21;
-            this.vertrekDateTime.ValueChanged += new System.EventHandler(this.vertrekDateTime_ValueChanged);
             // 
             // aankomstDateTime
             // 

@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DataAccess; 
+using DataAccess;
+using Business;
 
 namespace Dienstregeling
 {
@@ -21,7 +22,12 @@ namespace Dienstregeling
         private void loginButton_Click(object sender, EventArgs e)
         {
             String gebruikersnaam = gebruikersnaamTextBox.Text;
-            String wachtwoord = wachtwoordTextBox.Text;
+
+            //ingegeven wachtwoord encrypteren om zo te testen met het wachtwoord in de database.
+            //zo moet je het wachtwoord in de database niet decrypten
+            String salt = SecurityHelper.GenerateSalt(gebruikersnaam);
+            String wachtwoord = SecurityHelper.ConvertToEncrypt(wachtwoordTextBox.Text, salt, 10101, 70);
+
             LoginDA login = new LoginDA();
             int loginID = login.LoginControle(gebruikersnaam, wachtwoord);
             if ( loginID != 0)
@@ -38,7 +44,7 @@ namespace Dienstregeling
 
                 this.Show();
             }
-            else { MessageBox.Show("Geen heldige login."); }
+            else { MessageBox.Show("Geen heldige login.");}
         }
 
         private void gaTerugButton_Click_1(object sender, EventArgs e)

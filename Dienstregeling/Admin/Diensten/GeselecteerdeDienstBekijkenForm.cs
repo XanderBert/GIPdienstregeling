@@ -33,6 +33,8 @@ namespace Dienstregeling
             this.Close();
         }
 
+
+        //tekst van bool aanpassen
         private String WeekdienstTekst()
         {
             String value;

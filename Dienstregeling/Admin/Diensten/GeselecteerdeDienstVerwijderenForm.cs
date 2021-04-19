@@ -21,9 +21,9 @@ namespace Dienstregeling
             InitializeComponent();
             _treinID = trein.ID;
             textLabel.Text = "Weet je zeker dat je dienst " + trein.Naam + " wilt verwijderen ?";
-            
         }
 
+        //Dienst verwijderen
         private void jaButton_Click(object sender, EventArgs e)
         {
             DienstregelingDA dienstregeling = new DienstregelingDA();

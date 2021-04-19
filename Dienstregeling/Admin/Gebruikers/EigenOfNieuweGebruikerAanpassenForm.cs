@@ -26,24 +26,28 @@ namespace Dienstregeling
             gebruikersnaamTextBox.Text = _gebruiker.Gebruikersnaam;
             _error = new ErrorProvider();
         }
-
+        
+        //kijkt of de wachtwoorden overreen komen
         private bool IsWachtwoordGelijk()
         {
             return wachtwoordTextBox.Text.Equals(repeatWachtwoordTextBox.Text);
         }
 
+        // kijkt of het wachtwoord wel langer of gelijk aan 6 tekens is.
         private bool IsWachtwoordLangGenoeg()
         {
             bool isLang = false;
-            if (wachtwoordTextBox.Text.Length >= 8) { isLang = true; }
+            if (wachtwoordTextBox.Text.Length >= 6) { isLang = true; }
             return isLang;
         }
 
+        //kijkt of de gebruikersnaam al niet in gebruik is.
         private bool IsGebruikerVrij()
         {
             return _loginDA.IsGebruikersnaamVrij(gebruikersnaamTextBox.Text);
         }
 
+        //kijkt of de gebruikersnaam niet leeg is.
         private bool IsGebruikerLeeg(String gebruiker)
         {
             bool isGebruikerLeeg = false;
@@ -56,16 +60,22 @@ namespace Dienstregeling
             return isGebruikerLeeg;
         }
 
+        // kijkt of dat de gegevens aan alle voorwaarden voldoen en slaat het dan op.
         private void opslaanButton_Click_1(object sender, EventArgs e)
         {
             if (ValidateChildren())
             {
                 _gebruiker.Gebruikersnaam = gebruikersnaamTextBox.Text;
-                _gebruiker.Wachtwoord = wachtwoordTextBox.Text;
+
+                //wachtwoord encrypteren.
+                string salt = SecurityHelper.GenerateSalt(gebruikersnaamTextBox.Text);
+                _gebruiker.Wachtwoord = SecurityHelper.ConvertToEncrypt(wachtwoordTextBox.Text, salt, 10101, 70);
+
                 this.Close();
             }
         }
 
+        //roept alle controles op.
         private void gebruikersnaamTextBox_Validating(object sender, CancelEventArgs e)
         {
             bool heeftGebruikersnaamNietVeranderd = _gebruiker.Gebruikersnaam.Equals(gebruikersnaamTextBox.Text);
@@ -81,11 +91,13 @@ namespace Dienstregeling
             }
         }
 
+        // error legen
         private void gebruikersnaamTextBox_Validated(object sender, EventArgs e)
         {
             _error.SetError(gebruikersnaamTextBox, "");
         }
 
+        // geeft error als wachtwoord niet lang genoeg is.
         private void wachtwoordTextBox_Validating(object sender, CancelEventArgs e)
         {
             if (!IsWachtwoordLangGenoeg())
@@ -96,11 +108,13 @@ namespace Dienstregeling
             }
         }
 
+        // error legen
         private void wachtwoordTextBox_Validated(object sender, EventArgs e)
         {
             _error.SetError(wachtwoordTextBox, "");
         }
 
+        //geeft error als de wachtwoorden niet overreen komen
         private void repeatWachtwoordTextBox_Validating(object sender, CancelEventArgs e)
         {
             if (!IsWachtwoordGelijk())
@@ -111,6 +125,7 @@ namespace Dienstregeling
             }
         }
 
+        // error legen
         private void repeatWachtwoordTextBox_Validated(object sender, EventArgs e)
         {
             _error.SetError(repeatWachtwoordTextBox, "");

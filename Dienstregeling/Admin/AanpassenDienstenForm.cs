@@ -210,9 +210,14 @@ namespace Dienstregeling
         private void gebruikerVerwijderenButton_Click(object sender, EventArgs e)
         {
             Gebruiker selected = (Gebruiker)gebruikersListBox.SelectedItem;
-            if (IsZelfdeGebruiker(selected.ID)) { MessageBox.Show("Je kan jezelf niet verwijderen"); } else { _loginDA.DeleteRecord(selected.ID); }
-            _gebruikers = _loginDA.ReadTable();
-            ListBoxVernieuwen();
+
+            DialogResult dialogResult = MessageBox.Show("Ben je zeker dat je gebruiker "+selected.Gebruikersnaam + " wil verwijderen?" , "Gebruiker Verwijderen", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                if (IsZelfdeGebruiker(selected.ID)) { MessageBox.Show("Je kan jezelf niet verwijderen"); } else { _loginDA.DeleteRecord(selected.ID); }
+                _gebruikers = _loginDA.ReadTable();
+                ListBoxVernieuwen();
+            }
         }
 
         private bool IsZelfdeGebruiker(int id)

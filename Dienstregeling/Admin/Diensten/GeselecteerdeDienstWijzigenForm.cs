@@ -40,12 +40,15 @@ namespace Dienstregeling
             aankomstDateTime.Value += aankomsttijd;
         }
 
+
+        //bestemmingen opvullen
         private void BestemmingComboBoxVullen()
         {
             bestemmingComboBox.Items.Clear();
             foreach (String bestemming in _bestemmingen) { bestemmingComboBox.Items.Add(bestemming); }
         }
 
+        //kijkt of het een geldige bestemming is.
         private bool BestemmingControle()
         {
             bool aanwezig = false;
@@ -56,6 +59,8 @@ namespace Dienstregeling
             return aanwezig;
         }
 
+
+        // kijkt of de aankomsttijd niet eerder is of de vertrektijd.
         private bool TijdControle()
         {
             bool tijdIsJuist = false;
@@ -78,11 +83,6 @@ namespace Dienstregeling
                 this.Close();
             }
             else { MessageBox.Show("Een of meerdere voorwaarden zijn ongeldig!"); }
-        }
-
-        private void vertrekDateTime_ValueChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
